@@ -1,0 +1,7 @@
+.Navegacion {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    font-weight: 700;
+};
