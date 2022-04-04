@@ -6,13 +6,14 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 
 function App() {
 
-  const title = "menu"
+  const title = "Menú"
 
   return (
     <div className="App">
-      <Header />
       <ItemListContainer greetings={"Bienvenidos"}/>
       <NavBar name = {title} />
+      
+      <Header />      
     </div>
   );
 }

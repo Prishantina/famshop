@@ -1,5 +1,6 @@
 import "./NavBar.css"
 import CartWidget from "../CartWidget/CartWidget";
+import Counter from "../Counter/Counter";
 
 const NavBar = (props) => {
     return(
@@ -13,6 +14,7 @@ const NavBar = (props) => {
                 <li><a href="#">Contacto</a></li>
                 <li><CartWidget/></li>
             </ul>
+            <><Counter/></>
         </nav>
     )
 };

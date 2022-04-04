@@ -1,4 +1,9 @@
 .Carro {
     width: 40px;
-    height: auto;
+    height: 40px;
+}
+
+.Dibujo {
+    display: flex;
+    flex-direction: row;
 }
