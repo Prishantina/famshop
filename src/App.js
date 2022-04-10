@@ -5,15 +5,11 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 
 
 function App() {
-
-  const title = "Menú"
-
   return (
     <div className="App">
-      <ItemListContainer greetings={"Bienvenidos"}/>
-      <NavBar name = {title} />
-      
-      <Header />      
+      <Header/>
+      <NavBar/> 
+      <ItemListContainer/>   
     </div>
   );
 }
