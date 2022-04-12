@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 
 function App() {
@@ -9,7 +10,8 @@ function App() {
     <div className="App">
       <Header/>
       <NavBar/> 
-      <ItemListContainer/>   
+      <ItemListContainer/>  
+      <ItemDetailContainer/> 
     </div>
   );
 }
