@@ -40,7 +40,7 @@ const products = [
         price:'2500'
     },
 ]
-const getProducts=()=> {
+const getProductsById =()=> {
     return  new Promise ((resolve, reject)=>{
         const ok = true;
         setTimeout(() => {
@@ -55,4 +55,4 @@ const getProducts=()=> {
 }
 
 
-export default getProducts;
+export default getProductsById;

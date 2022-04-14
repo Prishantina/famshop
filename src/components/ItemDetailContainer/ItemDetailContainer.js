@@ -1,72 +1,28 @@
-import {useState, useEffect} from "react";
-import getProductsById from "../ItemDetail/ItemDetail"; 
+import { useState, useEffect } from "react";
+import getProductsById from "../productos";
+import { useParams } from "react-router-dom";
 
-const ItemDetailContainer = () =>{
-    
-    const [productos, setProductos]= useState([])
+const ItemDetailContainer =()=> {
+    const [product, setProduct] = useState()
+    const [loading, setLoading] = useState(true)
 
-    useEffect(()=>{
-        getProductsById().then(productos => setProductos(productos)).catch(error=>console.log(error));
-     },[])
-    /*  const onAdd = (condition) => {
-         if(condition === '-'){
-             setCount(count - 1);
-         } 
-         if(condition === '+'){
-             setCount(count + 1)
-         }
-     };
-     const initial = 1;
-     const stock = 10; */
-     return (
-         <div>
-             {productos.map((producto) =>(
-                 <div>
-                     <h2>{producto.name}</h2>
-                     <img src={producto.img}/>
-                     {/* <ItemCount onAdd={onAdd} stock={stock} initial={initial} count={count}/>   */}
-                 </div>
-             ))}
-          
-         </div>
-        
-      )
+    const { productId } = useParams()
 
-   /*  useEffect(() => {
-        fetch("https://api.mercadolibre.com/sites/MLA/search?q=iphone").then(response =>{
-            return response.json()
+    useEffect(() =>{
+        getProductsById(productId).then(item =>{
+            setProduct(item)
+        }).catch(error => {
+            console.log(error)
+        }).finally(() =>{
+            setLoading(false)
         })
-        .then(r => {
-            setProductos(r.results)
-        })
-    }, [])
-    console.log(productos)
+    },[])
 
-    return(
+    return (
         <div>
-            <h1>Hola</h1>
-            <ul>
-                {productos.map(prod => 
-                <li key={prod.id}>{prod.title}
-                <p>{prod.price}</p>
-                <img src={prod.thumbnail} alt={prod.title}/></li>)}
-                
-            </ul>
-            
-              
+            <p>Detalle</p>
         </div>
-        
-    ) */
-    
+    )
 }
 
-
-
-
-
-
-
-
-
-
-export default ItemDetailContainer
+export default ItemDetailContainer;

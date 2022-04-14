@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import getProducts from "../products";
+import { Link } from "react-router-dom";
 
 const ItemListContainer = () => {
     const [count, setCount] = useState(1);
@@ -25,6 +26,7 @@ const ItemListContainer = () => {
                     <h2>{product.name}</h2>
                     <img src={product.img}/>
                     <ItemCount onAdd={onAdd} stock={stock} initial={initial} count={count}/>  
+                    <button>Ver más</button>
                 </div>
             ))}
          
